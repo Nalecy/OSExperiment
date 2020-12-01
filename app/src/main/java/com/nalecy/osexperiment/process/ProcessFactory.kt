@@ -1,6 +1,6 @@
 package com.nalecy.osexperiment.process
 
-import com.nalecy.osexperiment.process.ProcessController.Companion.PROCESS_WAIT
+import com.nalecy.osexperiment.Constants
 import java.util.*
 
 /**
@@ -18,7 +18,7 @@ object ProcessFactory {
                 i,
                 5,
                 0,
-                PROCESS_WAIT
+                Constants.PROCESS_WAIT
             )
             add(process)
         }

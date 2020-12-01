@@ -4,10 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nalecy.osexperiment.Constants.PROCESS_TYPE_MLFQ
+import com.nalecy.osexperiment.Constants.PROCESS_TYPE_ROUND
 import com.nalecy.osexperiment.R
 import com.nalecy.osexperiment.databinding.ActivityProcessBinding
-import com.nalecy.osexperiment.process.ProcessController.Companion.TYPE_MLFQ
-import com.nalecy.osexperiment.process.ProcessController.Companion.TYPE_ROUND
 
 class ProcessActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProcessBinding
@@ -15,7 +15,7 @@ class ProcessActivity : AppCompatActivity() {
     private var type: Int = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        type = intent.getIntExtra("type",TYPE_ROUND)
+        type = intent.getIntExtra("type",PROCESS_TYPE_ROUND)
 
         val controller = ProcessController(type)
         controller.initData(ProcessFactory.getData())
@@ -24,8 +24,8 @@ class ProcessActivity : AppCompatActivity() {
         binding.list.layoutManager = LinearLayoutManager(this)
         binding.list.adapter = adapter
         binding.title.text = when(type){
-            TYPE_ROUND -> "轮转"
-            TYPE_MLFQ -> "多级反馈"
+            PROCESS_TYPE_ROUND -> "轮转"
+            PROCESS_TYPE_MLFQ -> "多级反馈"
             else -> ""
         }
         binding.processRunBtn.setOnClickListener {

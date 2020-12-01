@@ -1,5 +1,10 @@
 package com.nalecy.osexperiment.process
 
+import com.nalecy.osexperiment.Constants.PROCESS_FINISH
+import com.nalecy.osexperiment.Constants.PROCESS_RUN
+import com.nalecy.osexperiment.Constants.PROCESS_WAIT
+import com.nalecy.osexperiment.Constants.PROCESS_TYPE_MLFQ
+import com.nalecy.osexperiment.Constants.PROCESS_TYPE_ROUND
 import kotlin.math.min
 
 
@@ -104,8 +109,8 @@ class ProcessController(val type:Int) {
 
     fun run(){
         when(type){
-            TYPE_MLFQ -> runMLFQ()
-            TYPE_ROUND -> runRound()
+            PROCESS_TYPE_MLFQ -> runMLFQ()
+            PROCESS_TYPE_ROUND -> runRound()
         }
     }
 
@@ -145,12 +150,4 @@ class ProcessController(val type:Int) {
         runTime = 0
     }
 
-    companion object {
-        const val PROCESS_FINISH = 1
-        const val PROCESS_WAIT = 2
-        const val PROCESS_RUN = 3
-
-        const val TYPE_ROUND = 0
-        const val TYPE_MLFQ = 1
-    }
 }
