@@ -13,7 +13,7 @@
         tools:context=".process.ProcessActivity">
 
         <FrameLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/framelayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -30,31 +30,72 @@
                 tools:text="标题" />
         </FrameLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/space_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-        <Button
-            android:id="@+id/storage_run_btn"
+        <TextView
+            android:id="@+id/free_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="run"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/space_list" />
-
-
-        <TextView
-            android:id="@+id/storage_show"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/framelayout"
+            android:text="空闲分区链"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/space_free_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/storage_run_btn" />
+            app:layout_constraintTop_toBottomOf="@+id/free_text" />
+        <EditText
+            android:id="@+id/alloc_size_edt"
+            android:layout_width="200dp"
+            android:hint="input size"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/space_free_list"
+            android:inputType="number"
+            />
+        <Button
+            android:id="@+id/alloc_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="alloc"
+            app:layout_constraintStart_toEndOf="@+id/alloc_size_edt"
+            app:layout_constraintTop_toBottomOf="@+id/space_free_list" />
+        <TextView
+            android:id="@+id/alloc_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alloc_size_edt"
+            android:text="分配分区链"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/space_alloc_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alloc_text"/>
+        <EditText
+            android:id="@+id/free_address_edt"
+            android:layout_width="200dp"
+            android:hint="input address"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/space_alloc_list"
+            android:inputType="number"
+            />
+        <Button
+            android:id="@+id/free_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="alloc"
+            app:layout_constraintStart_toEndOf="@+id/free_address_edt"
+            app:layout_constraintTop_toBottomOf="@+id/space_alloc_list" />
+
+
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@ class Space(
     var prev: Space?,
     var next: Space?
 ) {
-    fun isFrontThan(space: Space) = startAddress + size < space.startAddress
+    fun isFrontThan(space: Space) = startAddress + size -1 < space.startAddress
 
     fun isBehindThan(space: Space) = space.startAddress + space.size < startAddress
 }

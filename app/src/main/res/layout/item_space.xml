@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/space_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="开始地址"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/space_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="240dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:text="空闲"
+            />
+        <TextView
+            android:id="@+id/space_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="120dp"
+            android:textColor="@color/black"
+            android:text="长度"
+            />
+
+
+
+    </RelativeLayout>
+</layout>

@@ -8,21 +8,25 @@ abstract class AbstractAlgorithm(
         private val size: Long
 ) {
 
-    private var headFreeSpace: Space = Space(true, 0,
+    private var headFreeSpace: Space? = Space(true, 0,
             size, null, null)
 
     private val busySpaceList = mutableListOf<Space>()
 
     fun acquireSpace(acquireSize: Long): Space? {
         if (acquireSize > size) {
-            TODO("处理越界")
+            return null
         }
         val suitableSpace = findSuitableSpace(headFreeSpace, acquireSize)
                 ?: return null
         val needBehindCut = acquireSize < suitableSpace.startAddress + suitableSpace.size
 
         if (needBehindCut) {
-            cutSpaceBehind(suitableSpace, suitableSpace.size - acquireSize)
+            cutSpaceBehind(suitableSpace, suitableSpace.size - acquireSize).also {
+                if (it?.size == 0L) {
+                    removeSpace(it)
+                }
+            }
         }
         return removeSpace(suitableSpace)
     }
@@ -33,13 +37,14 @@ abstract class AbstractAlgorithm(
      */
     private fun cutSpaceBehind(originSpace: Space, cutSize: Long): Space? {
         if (originSpace.size < cutSize) return null
-        return Space(true, originSpace.startAddress + cutSize, cutSize, null, null)
+        return Space(true, originSpace.startAddress + (originSpace.size - cutSize), cutSize, null, null)
                 .also {
                     originSpace.apply {
-                        size -= cutSize
-                        it.next = next
-                        it.prev = this
-                        next = it
+                            size -= cutSize
+                            it.next = next
+                            it.prev = this
+                            next = it
+
                     }
                 }
     }
@@ -63,6 +68,9 @@ abstract class AbstractAlgorithm(
     }
 
     private fun removeSpace(space: Space) = space.apply {
+        if (headFreeSpace == this){
+            headFreeSpace = next
+        }
         next?.prev = prev
         prev?.next = next
         next = null
@@ -70,8 +78,12 @@ abstract class AbstractAlgorithm(
     }
 
     fun returnBackSpace(space: Space) {
-        if (space.isFrontThan(headFreeSpace)) {
-            headFreeSpace.prev = space
+        if (headFreeSpace == null){
+            headFreeSpace = space
+            return
+        }
+        if (space.isFrontThan(headFreeSpace!!)) {
+            headFreeSpace!!.prev = space
             space.next = headFreeSpace
             headFreeSpace = space
         } else {
@@ -96,6 +108,9 @@ abstract class AbstractAlgorithm(
         //插入完毕，开始处理合并
         space.prev?.apply {
             if (startAddress + size == space.startAddress) {
+                if (headFreeSpace == this){
+                    headFreeSpace = space
+                }
                 space.startAddress = startAddress
                 space.size += size
                 space.prev = prev
@@ -108,6 +123,14 @@ abstract class AbstractAlgorithm(
                 space.next = next
                 next?.prev = space
             }
+        }
+    }
+
+    fun getFreeSpaceList() = mutableListOf<Space>().apply {
+        var walk:Space? = headFreeSpace
+        while (walk != null){
+            add(walk)
+            walk = walk.next
         }
     }
 

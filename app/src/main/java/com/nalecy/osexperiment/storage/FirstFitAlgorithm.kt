@@ -8,7 +8,7 @@ class FirstFitAlgorithm(initSize: Long) :AbstractAlgorithm(initSize) {
     override fun findSuitableSpace(head: Space?, size: Long): Space? {
         var walk = head
         while (walk != null){
-            if (walk.size > size ){
+            if (walk.size >= size ){
                 break
             }
             walk = walk.next

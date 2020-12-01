@@ -10,7 +10,7 @@ class BestFitAlgorithm(initSize: Long) : AbstractAlgorithm(initSize) {
         var walk = head
         var suitableSpace: Space? = null
         while (walk != null) {
-            if (walk.size > size) {
+            if (walk.size >= size) {
                 if (suitableSpace == null || walk.size - size < suitableSpace.size - size) {
                     suitableSpace = walk
                 }
