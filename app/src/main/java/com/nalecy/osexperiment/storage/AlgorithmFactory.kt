@@ -5,7 +5,10 @@ package com.nalecy.osexperiment.storage
  * @since 2020/11/30
  */
 object AlgorithmFactory {
+    private const val INIT_SIZE = 600L
 
-    fun getFirstFitAlgorithm():AbstractAlgorithm  =  TODO()
+    fun getFirstFitAlgorithm(): AbstractAlgorithm  =  FirstFitAlgorithm(INIT_SIZE)
+
+    fun getBestFitAlgorithm(): AbstractAlgorithm  =  BestFitAlgorithm(INIT_SIZE)
 
 }

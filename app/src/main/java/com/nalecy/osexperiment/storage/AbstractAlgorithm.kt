@@ -113,8 +113,6 @@ abstract class AbstractAlgorithm(
 
     abstract fun findSuitableSpace(head: Space?, size: Long): Space?
 
-    abstract fun reset()
-
     fun free(space: Space) = returnBackSpace(space.apply {
         free = true
         busySpaceList.remove(this)

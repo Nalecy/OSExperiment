@@ -16,9 +16,4 @@ class FirstFitAlgorithm(initSize: Long) :AbstractAlgorithm(initSize) {
         return walk
     }
 
-
-    override fun reset() {
-
-    }
-
 }
