@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".job.JobActivity"
+    android:orientation="vertical"
+    >
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/act_dispatch_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        tools:itemCount="5"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/act_dispatch_tv_storage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="主存大小 10"
+            android:layout_margin="10dp"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/act_dispatch_tv_machine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="磁带机数目 5"
+            android:layout_margin="10dp"
+            android:textSize="15sp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/act_dispatch_tv_turnTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="平均周转时间：10s"
+        android:textSize="15sp"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:id="@+id/act_dispatch_tv_weightTurnTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="带权平均周转时间：10s"
+        android:textSize="15sp"
+        android:layout_margin="10dp"
+        />
+
+        <Button
+            android:id="@+id/act_dispatch_btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="run"
+            android:layout_marginStart="20dp"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/act_dispatch_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="当前时间："
+            android:textSize="15sp"
+            android:layout_centerInParent="true"
+            />
+
+        <Button
+            android:id="@+id/act_dispatch_btn_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="reset"
+            android:layout_below="@+id/act_dispatch_tv_time"
+            android:layout_marginStart="20dp"
+            />
+
+
+
+
+
+
+</LinearLayout>

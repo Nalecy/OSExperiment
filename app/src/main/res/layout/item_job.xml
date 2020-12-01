@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+                <TextView
+                    android:id="@+id/item_job_tv_name"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="编号 1"
+                    android:layout_marginStart="0dp"
+                    />
+
+                <TextView
+                    android:id="@+id/item_job_tv_submitTime"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="进入时间：1"
+                    android:layout_marginStart="110dp"
+                    />
+
+                <TextView
+                    android:id="@+id/item_job_tv_runTime"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="所需运行时间：1"
+                    android:layout_marginStart="200dp"
+                    />
+
+
+
+
+                <TextView
+                    android:id="@+id/item_job_tv_storage"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    tools:text="内存需要：1"
+                    android:layout_below="@+id/item_job_tv_runTime"
+                    />
+
+                <TextView
+                    android:id="@+id/item_job_tv_machine"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="磁带机需要：1"
+                    android:layout_marginStart="110dp"
+                    android:layout_below="@+id/item_job_tv_runTime"
+                    />
+
+
+
+                <TextView
+                    android:id="@+id/item_job_tv_startTime"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="启动：1"
+                    android:layout_below="@+id/item_job_tv_machine"
+                    />
+
+<!--                <TextView-->
+<!--                    android:id="@+id/item_job_tv_useTime"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    tools:text="耗时：1"-->
+<!--                    android:layout_marginStart="100dp"-->
+<!--                    android:layout_below="@+id/item_job_tv_machine"-->
+<!--                    />-->
+
+                <TextView
+                    android:id="@+id/item_job_tv_endTime"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="完成：1"
+                    android:layout_marginStart="110dp"
+                    android:layout_below="@+id/item_job_tv_machine"
+                    />
+
+
+                <TextView
+                    android:id="@+id/item_job_tv_turnTime"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="周转 1"
+                    android:layout_below="@+id/item_job_tv_endTime"
+                    />
+
+                <TextView
+                    android:id="@+id/item_job_tv_weightTurnTime"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="带权周转 1"
+                    android:layout_marginStart="110dp"
+                    android:layout_below="@+id/item_job_tv_endTime"
+                    />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/item_job_tv_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="已完成"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eBeBeB"
+        >
+    </View>
+
+</LinearLayout>

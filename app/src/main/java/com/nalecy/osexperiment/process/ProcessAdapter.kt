@@ -2,7 +2,7 @@ package com.nalecy.osexperiment.process
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import com.nalecy.osexperiment.Constants
+import com.nalecy.osexperiment.Constant
 import com.nalecy.osexperiment.R
 
 /**
@@ -19,9 +19,9 @@ class ProcessAdapter(layoutResId: Int, data: MutableList<Process>) :
             .setText(R.id.process_useTime, "已运行时间 " + item.useTime)
             .setText(R.id.process_state,{
                 when(item.state){
-                    Constants.PROCESS_FINISH -> "已完成"
-                    Constants.PROCESS_RUN -> "运行中"
-                    Constants.PROCESS_WAIT -> "等待中"
+                    Constant.PROCESS_FINISH -> "已完成"
+                    Constant.PROCESS_RUN -> "运行中"
+                    Constant.PROCESS_WAIT -> "等待中"
                     else -> ""
                 }
             }.invoke())

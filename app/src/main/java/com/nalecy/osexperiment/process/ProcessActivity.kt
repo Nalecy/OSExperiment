@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nalecy.osexperiment.Constants.PROCESS_TYPE_MLFQ
-import com.nalecy.osexperiment.Constants.PROCESS_TYPE_ROUND
+import com.nalecy.osexperiment.Constant.PROCESS_TYPE_MLFQ
+import com.nalecy.osexperiment.Constant.PROCESS_TYPE_ROUND
 import com.nalecy.osexperiment.R
 import com.nalecy.osexperiment.databinding.ActivityProcessBinding
 

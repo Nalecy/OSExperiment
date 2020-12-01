@@ -3,15 +3,16 @@ package com.nalecy.osexperiment
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import androidx.databinding.DataBindingUtil
-import com.nalecy.osexperiment.Constants.PROCESS_TYPE_MLFQ
-import com.nalecy.osexperiment.Constants.PROCESS_TYPE_ROUND
-import com.nalecy.osexperiment.Constants.STORAGE_TYPE_BEST
-import com.nalecy.osexperiment.Constants.STORAGE_TYPE_FIRST
+import com.nalecy.osexperiment.Constant.J_FCFS
+import com.nalecy.osexperiment.Constant.J_SJF
+import com.nalecy.osexperiment.Constant.PROCESS_TYPE_MLFQ
+import com.nalecy.osexperiment.Constant.PROCESS_TYPE_ROUND
+import com.nalecy.osexperiment.Constant.STORAGE_TYPE_BEST
+import com.nalecy.osexperiment.Constant.STORAGE_TYPE_FIRST
 import com.nalecy.osexperiment.databinding.ActivityMainBinding
+import com.nalecy.osexperiment.job.JobActivity
 import com.nalecy.osexperiment.process.ProcessActivity
-import com.nalecy.osexperiment.process.ProcessController
 import com.nalecy.osexperiment.storage.StorageActivity
 
 class MainActivity : AppCompatActivity() {
@@ -40,5 +41,16 @@ class MainActivity : AppCompatActivity() {
                 putExtra("type",STORAGE_TYPE_BEST)
             })
         }
+        binding.jobFcfs.setOnClickListener {
+            startActivity(Intent(this,JobActivity::class.java).apply {
+                putExtra("dispatchType",J_FCFS)
+            })
+        }
+        binding.jobSjf.setOnClickListener {
+            startActivity(Intent(this,JobActivity::class.java).apply {
+                putExtra("dispatchType",J_SJF)
+            })
+        }
+
     }
 }

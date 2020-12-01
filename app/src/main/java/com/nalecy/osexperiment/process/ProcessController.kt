@@ -1,10 +1,10 @@
 package com.nalecy.osexperiment.process
 
-import com.nalecy.osexperiment.Constants.PROCESS_FINISH
-import com.nalecy.osexperiment.Constants.PROCESS_RUN
-import com.nalecy.osexperiment.Constants.PROCESS_WAIT
-import com.nalecy.osexperiment.Constants.PROCESS_TYPE_MLFQ
-import com.nalecy.osexperiment.Constants.PROCESS_TYPE_ROUND
+import com.nalecy.osexperiment.Constant.PROCESS_FINISH
+import com.nalecy.osexperiment.Constant.PROCESS_RUN
+import com.nalecy.osexperiment.Constant.PROCESS_WAIT
+import com.nalecy.osexperiment.Constant.PROCESS_TYPE_MLFQ
+import com.nalecy.osexperiment.Constant.PROCESS_TYPE_ROUND
 import kotlin.math.min
 
 

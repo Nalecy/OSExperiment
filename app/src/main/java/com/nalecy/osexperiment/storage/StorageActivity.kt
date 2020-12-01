@@ -5,12 +5,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nalecy.osexperiment.Constants
-import com.nalecy.osexperiment.Constants.STORAGE_TYPE_BEST
-import com.nalecy.osexperiment.Constants.STORAGE_TYPE_FIRST
+import com.nalecy.osexperiment.Constant.STORAGE_TYPE_BEST
+import com.nalecy.osexperiment.Constant.STORAGE_TYPE_FIRST
 import com.nalecy.osexperiment.R
 import com.nalecy.osexperiment.databinding.ActivityStorageBinding
-import com.nalecy.osexperiment.process.ProcessController
 
 class StorageActivity : AppCompatActivity() {
     private var type: Int = -1

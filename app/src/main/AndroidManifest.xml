@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OSExperiment">
-        <activity android:name=".storage.StorageActivity"></activity>
+        <activity android:name=".storage.StorageActivity"/>
+        <activity android:name=".job.JobActivity"/>
         <activity android:name=".process.ProcessActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
