@@ -11,6 +11,7 @@ import com.nalecy.osexperiment.Constant.PROCESS_TYPE_ROUND
 import com.nalecy.osexperiment.Constant.STORAGE_TYPE_BEST
 import com.nalecy.osexperiment.Constant.STORAGE_TYPE_FIRST
 import com.nalecy.osexperiment.databinding.ActivityMainBinding
+import com.nalecy.osexperiment.file.FileMainActivity
 import com.nalecy.osexperiment.job.JobActivity
 import com.nalecy.osexperiment.process.ProcessActivity
 import com.nalecy.osexperiment.storage.StorageActivity
@@ -50,6 +51,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,JobActivity::class.java).apply {
                 putExtra("dispatchType",JOB_SJF)
             })
+        }
+        binding.file.setOnClickListener {
+            startActivity(Intent(this,FileMainActivity::class.java))
         }
 
     }
