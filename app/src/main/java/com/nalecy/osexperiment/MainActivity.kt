@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.nalecy.osexperiment.Constant.J_FCFS
-import com.nalecy.osexperiment.Constant.J_SJF
+import com.nalecy.osexperiment.Constant.JOB_FCFS
+import com.nalecy.osexperiment.Constant.JOB_SJF
 import com.nalecy.osexperiment.Constant.PROCESS_TYPE_MLFQ
 import com.nalecy.osexperiment.Constant.PROCESS_TYPE_ROUND
 import com.nalecy.osexperiment.Constant.STORAGE_TYPE_BEST
@@ -43,12 +43,12 @@ class MainActivity : AppCompatActivity() {
         }
         binding.jobFcfs.setOnClickListener {
             startActivity(Intent(this,JobActivity::class.java).apply {
-                putExtra("dispatchType",J_FCFS)
+                putExtra("dispatchType",JOB_FCFS)
             })
         }
         binding.jobSjf.setOnClickListener {
             startActivity(Intent(this,JobActivity::class.java).apply {
-                putExtra("dispatchType",J_SJF)
+                putExtra("dispatchType",JOB_SJF)
             })
         }
 

@@ -39,13 +39,12 @@ class JobActivity : AppCompatActivity() {
     private fun initVariable() {
         val intent = intent
         if (intent != null) {
-            mDispatchType = intent.getIntExtra("dispatchType", Constant.J_FCFS)
+            mDispatchType = intent.getIntExtra("dispatchType", Constant.JOB_FCFS)
             instance!!.dispatchType = mDispatchType
         }
         when (mDispatchType) {
-            Constant.J_FCFS -> title = "FCFS"
-            Constant.J_SJF -> title = "SJF"
-            Constant.J_HRN -> title = "HRN"
+            Constant.JOB_FCFS -> title = "FCFS"
+            Constant.JOB_SJF -> title = "SJF"
             else -> {
             }
         }
@@ -79,11 +78,11 @@ class JobActivity : AppCompatActivity() {
     }
 
     private fun initJob() {
-        val job1 = Job("1", 2, 5, 3, 2, Constant.J_WAIT)
-        val job2 = Job("2", 1, 4, 2, 1, Constant.J_WAIT)
-        val job3 = Job("3", 4, 6, 6, 3, Constant.J_WAIT)
-        val job4 = Job("4", 10, 4, 2, 2, Constant.J_WAIT)
-        val job5 = Job("5", 7, 5, 3, 1, Constant.J_WAIT)
+        val job1 = Job("1", 2, 5, 3, 2, Constant.JOB_WAIT)
+        val job2 = Job("2", 1, 4, 2, 1, Constant.JOB_WAIT)
+        val job3 = Job("3", 4, 6, 6, 3, Constant.JOB_WAIT)
+        val job4 = Job("4", 10, 4, 2, 2, Constant.JOB_WAIT)
+        val job5 = Job("5", 7, 5, 3, 1, Constant.JOB_WAIT)
         mData.add(job1)
         mData.add(job2)
         mData.add(job3)
@@ -128,11 +127,15 @@ class JobActivity : AppCompatActivity() {
     private fun jobFinish(): Boolean {
         var result = true
         for (job in mData) {
-            if (job.state != Constant.J_FINISH) {
+            if (job.state != Constant.JOB_FINISH) {
                 result = false
                 break
             }
         }
         return result
+    }
+
+    override fun onStart() {
+        super.onStart()
     }
 }

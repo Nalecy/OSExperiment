@@ -15,14 +15,21 @@ object Constant {
     const val STORAGE_TYPE_FIRST = 1
     const val STORAGE_TYPE_BEST = 2
 
-    const val J_SINGLE = 0
-    const val J_MULTI = 1
 
-    const val J_WAIT = 1
-    const val J_RUN = 2
-    const val J_FINISH = 3
+    const val JOB_WAIT = 1
+    const val JOB_RUN = 2
+    const val JOB_FINISH = 3
+    
+    const val JOB_FCFS = 111
+    const val JOB_SJF = 222
 
-    const val J_FCFS = 111
-    const val J_SJF = 222
-    const val J_HRN = 333
+    const val F_STATE_OPENING = 10
+    const val F_STATE_WAIT = 20
+    const val F_STATE_READ = 30
+    const val F_STATE_WRITE = 40
+    const val F_STATE_DELETE = 50
+    
+    const val F_PROTECT_READ = 0b001
+    const val F_PROTECT_WRITE = 0b010
+    const val F_PROTECT_RUN = 0b100
 }

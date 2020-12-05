@@ -24,9 +24,9 @@ class JobAdapter(layoutResId: Int, data: MutableList<Job>) :
             .setText(R.id.item_job_tv_weightTurnTime, "带权周转时间 " + job.weightTurnTime)
             .setText(R.id.item_job_tv_state, run {
                 when(job.state){
-                    Constant.J_WAIT -> "后备状态"
-                    Constant.J_RUN -> "执行状态"
-                    Constant.J_FINISH -> "完成状态"
+                    Constant.JOB_WAIT -> "后备状态"
+                    Constant.JOB_RUN -> "执行状态"
+                    Constant.JOB_FINISH -> "完成状态"
                     else -> ""
                 }
             })

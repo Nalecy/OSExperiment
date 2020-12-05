@@ -9,6 +9,10 @@ import com.nalecy.osexperiment.Constant.PROCESS_TYPE_ROUND
 import com.nalecy.osexperiment.R
 import com.nalecy.osexperiment.databinding.ActivityProcessBinding
 
+/**
+ * @author nalecy
+ * @since 2020/12/1
+ */
 class ProcessActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProcessBinding
     private lateinit var adapter: ProcessAdapter

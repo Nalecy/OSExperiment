@@ -35,12 +35,12 @@ internal class JobController private constructor() {
      * 当前可用磁带机
      */
     var machine: Int
-    
+
     var dispatchType = 0
     fun run() {
         when (dispatchType) {
-            Constant.J_FCFS -> runFCFS()
-            Constant.J_SJF -> runSJF()
+            Constant.JOB_FCFS -> runFCFS()
+            Constant.JOB_SJF -> runSJF()
         }
     }
 
@@ -49,7 +49,7 @@ internal class JobController private constructor() {
         jobEnqueue(runningQueue)
         if (runningQueue.size > 0) {
             val job = runningQueue[0]
-            job.state = Constant.J_RUN
+            job.state = Constant.JOB_RUN
             // 设置开始时间，占用资源
             if (job.startTime == 0) {
                 job.startTime = runTime
@@ -62,7 +62,7 @@ internal class JobController private constructor() {
                 job.turnTime = runTime - job.submitTime
                 job.weightTurnTime = job.turnTime.toFloat() / job.runTime
                 runningQueue.remove(job)
-                job.state = Constant.J_FINISH
+                job.state = Constant.JOB_FINISH
                 // 归还资源
                 storage += job.storage
                 machine += job.machine
@@ -85,7 +85,7 @@ internal class JobController private constructor() {
         }
         if (runningQueue.size > 0) {
             val job = runningQueue[0]
-            job.state = Constant.J_RUN
+            job.state = Constant.JOB_RUN
             // 设置开始时间，占用资源
             if (job.startTime == 0) {
                 job.startTime = runTime
@@ -98,7 +98,7 @@ internal class JobController private constructor() {
                 job.turnTime = runTime - job.submitTime
                 job.weightTurnTime = job.turnTime.toFloat() / job.runTime
                 runningQueue.remove(job)
-                job.state = Constant.J_FINISH
+                job.state = Constant.JOB_FINISH
                 // 归还资源
                 storage += job.storage
                 machine += job.machine

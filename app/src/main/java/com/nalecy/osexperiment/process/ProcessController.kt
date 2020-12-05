@@ -9,10 +9,8 @@ import kotlin.math.min
 
 
 /**
- * 进程管理类
- *
- * author: Lin
- * date: 2020/11/30
+ * @author nalecy
+ * @since 2020/12/1
  */
 class ProcessController(val type:Int) {
     // 所有进程
