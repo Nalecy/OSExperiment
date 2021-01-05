@@ -32,13 +32,17 @@ object FileController {
 
     fun createFile(fileName: String) {
         val file = randomProtectCode(UserFile(fileName = fileName, fileSize =  randomSize()))
-        if (masterFileDir[curUserName]!!.contains(file)){
-            callback(false,"存在该文件")
-        }else if(masterFileDir[curUserName]!!.size == 10){
-            callback(false,"文件满了")
-        } else{
-            masterFileDir[curUserName]?.add(file)
-            callback(true,"创建成功")
+        when {
+            masterFileDir[curUserName]!!.contains(file) -> {
+                callback(false,"存在该文件")
+            }
+            masterFileDir[curUserName]!!.size == 10 -> {
+                callback(false,"文件满了")
+            }
+            else -> {
+                masterFileDir[curUserName]?.add(file)
+                callback(true,"创建成功")
+            }
         }
     }
 
@@ -140,7 +144,8 @@ object FileController {
                 callback(true, "写入文件中")
                 morkOperating()
                 it.state = Constant.F_STATE_WAIT
-                callback(true, "写入成功")
+                it.fileContent += "许怀鑫"
+                callback(true, "写入\"许怀鑫\"成功")
             } ?: run {
                 callback(false, "找不到该文件")
             }
@@ -160,7 +165,7 @@ object FileController {
                 callback(true, "读取文件中")
                 morkOperating()
                 it.state = Constant.F_STATE_WAIT
-                callback(true, "读取成功")
+                callback(true, "读取成功,文件内容：${it.fileContent}")
             } ?: run {
                 callback(false, "找不到该文件")
             }

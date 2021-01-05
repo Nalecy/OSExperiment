@@ -12,6 +12,7 @@ class UserFile(
     var fileName: String,
     var protectCode: Int = 0b000,
     var fileSize: Int = 0,
+    var fileContent: String = "",
     var state: Int = F_STATE_WAIT
 ) {
 
